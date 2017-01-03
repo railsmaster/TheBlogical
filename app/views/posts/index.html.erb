@@ -1,0 +1,54 @@
+  <%if notice.nil? == false%>
+    <div class="alert alert-success">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <%end%>
+
+<center>  <h1>My Posts</h1> </center> <br>
+
+  <div class="container">
+    <div class="row">
+      <%= form_tag posts_path,  method: :get do %>
+        <div class="input-group input-group-lg">
+            <input type="text" class="form-control" placeholder="Search Posts" name="q" value="<%=params[:q]%>">
+            <span class="input-group-btn">
+              <button class="btn btn-primary">
+                <span class="glyphicon glyphicon-search"></span> 
+                Search
+              </button>    
+          </span>
+        </div><!-- /input-group -->
+      <% end %>
+    </div>
+  </div>
+
+
+  <br>
+
+  <% @posts.each do |post| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <strong><%= post.title %></strong> 
+        <div class="panel-heading pull-right">
+          Comments : <%= post.comments.count %> |
+          <%= link_to 'Show Comments', post %>  |
+          <%= link_to 'Edit Post', edit_post_path(post) %> |
+          <%= link_to 'Delete Post', post, method: :delete, data: { confirm: 'Are you sure?' } %> 
+        </div>
+      </div>
+      <div class="panel-body">
+        <div class="fr-view">
+        <%= post.text.html_safe %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    
+  <br>
+
+<center>
+  <button class="btn btn-primary">
+    <span class="glyphicon glyphicon-plus"></span> 
+    <a href="/posts/new"><font color="white">Add New Post</font></a>
+  </button>
+</center>

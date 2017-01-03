@@ -1,0 +1,29 @@
+<%= form_for(post) do |f| %>
+  <% if post.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <%= message %> <br>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.text_field :title,class: "form-control", placeholder: "Title of Post" %>
+    <%= f.text_area :text,class: "form-control",id: "wysiwyg" %>  
+
+  <br>
+  <br>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary"%>
+  </div>
+<% end %>
+
+<script>
+  $('#wysiwyg').froalaEditor
+  ({
+    inlineMode: false,
+    minHeight: '200px',
+  })
+  
+</script>
