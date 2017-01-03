@@ -42,7 +42,7 @@
  */
 html,
 body {
-  
+  ::-webkit-scrollbar {display:none;}
   height: 100%;
   width: 100%;
 }
@@ -465,4 +465,5 @@ img::-moz-selection {
 body {
   margin-top: 0px;
   webkit-tap-highlight-color: #222222;
+  
 }
