@@ -31,7 +31,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 
 gem 'sanitize'
-
+gem 'carrierwave', '~> 1.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
