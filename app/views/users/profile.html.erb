@@ -2,11 +2,11 @@
 	<div class="col-lg col-lg">
 	    <div class="card hovercard">
 	        <div class="card-background">
-	            <%= image_tag "comment_pic.jpg" %>
+	            <%= image_tag current_user.avatar %>
 	            <!-- http://lorempixel.com/850/280/people/9/ -->
 	        </div>
 	        <div class="useravatar">
-	            <%= image_tag "comment_pic.jpg" %>
+	            <%= image_tag current_user.avatar %>
 	        </div>
 	        <div class="card-info"> <span class="card-title"><%=@user.username%></span>
 

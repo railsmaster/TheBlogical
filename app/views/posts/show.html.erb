@@ -1,4 +1,9 @@
-
+  <%if notice.nil? == false%>
+    <div class="alert alert-success">
+      <p id="notice"><%= notice %></p>
+    </div>
+  <%end%>
+  
 <center><h4><strong> Post </strong></h4></center>
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -49,11 +54,7 @@
     </div>
 </div>
 
-  <%if notice.nil? == false%>
-    <div class="alert alert-success">
-      <p id="notice"><%= notice %></p>
-    </div>
-  <%end%>
+
   
 <br>
 <center><h4><strong>&emsp;Add a comment:</strong></h4></center> <br>
